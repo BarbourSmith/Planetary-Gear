@@ -16,15 +16,15 @@
             "ioValues": [
                 {
                     "name": "Number of teeth Sun",
-                    "ioValue": 12
+                    "ioValue": 13
                 },
                 {
                     "name": "Number of teeth planet",
-                    "ioValue": 10
+                    "ioValue": 7
                 },
                 {
                     "name": "Teeth pitch",
-                    "ioValue": 2
+                    "ioValue": 2.5
                 }
             ],
             "topLevel": false,
@@ -47,11 +47,11 @@
                     "ioValues": [
                         {
                             "name": "Number Of Teeth",
-                            "ioValue": 12
+                            "ioValue": 13
                         },
                         {
                             "name": "Circular Pitch",
-                            "ioValue": 2
+                            "ioValue": 2.5
                         },
                         {
                             "name": "Pressure Angle",
@@ -81,11 +81,11 @@
                     "ioValues": [
                         {
                             "name": "p",
-                            "ioValue": 2
+                            "ioValue": 2.5
                         },
                         {
                             "name": "n",
-                            "ioValue": 10
+                            "ioValue": 7
                         }
                     ],
                     "currentEquation": "(p * n) / 3.14159 / 2"
@@ -100,11 +100,11 @@
                     "ioValues": [
                         {
                             "name": "Number Of Teeth",
-                            "ioValue": 10
+                            "ioValue": 7
                         },
                         {
                             "name": "Circular Pitch",
-                            "ioValue": 2
+                            "ioValue": 2.5
                         },
                         {
                             "name": "Pressure Angle",
@@ -126,11 +126,11 @@
                     "ioValues": [
                         {
                             "name": "p",
-                            "ioValue": 2
+                            "ioValue": 2.5
                         },
                         {
                             "name": "n",
-                            "ioValue": 12
+                            "ioValue": 13
                         }
                     ],
                     "currentEquation": "(p * n) / 3.14159 / 2"
@@ -169,11 +169,11 @@
                     "ioValues": [
                         {
                             "name": "x",
-                            "ioValue": 3.8197218605865184
+                            "ioValue": 5.172540019544244
                         },
                         {
                             "name": "y",
-                            "ioValue": 3.1831015504887654
+                            "ioValue": 2.78521385667767
                         }
                     ],
                     "currentEquation": "x + y"
@@ -191,7 +191,7 @@
                         },
                         {
                             "name": "xDist",
-                            "ioValue": 7.002823411075283
+                            "ioValue": 7.957753876221914
                         },
                         {
                             "name": "yDist",
@@ -200,6 +200,23 @@
                         {
                             "name": "zDist",
                             "ioValue": 0
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Tag",
+                    "name": "Add Tag",
+                    "x": 0.5773809523809523,
+                    "y": 0.3169230769230769,
+                    "uniqueID": 787333,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/508699/835262/166239Assembly"
+                        },
+                        {
+                            "name": "tag",
+                            "ioValue": "Sun"
                         }
                     ]
                 },
@@ -260,6 +277,40 @@
                     "simplify": false
                 },
                 {
+                    "atomType": "Tag",
+                    "name": "Add Tag",
+                    "x": 0.7738095238095237,
+                    "y": 0.3446153846153846,
+                    "uniqueID": 120691,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/508699/835262/659212Extrude"
+                        },
+                        {
+                            "name": "tag",
+                            "ioValue": "Plastic"
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Assembly",
+                    "name": "Assembly",
+                    "x": 0.6236772486772487,
+                    "y": 0.5876923076923077,
+                    "uniqueID": 367687,
+                    "ioValues": [
+                        {
+                            "name": "3D shape 4",
+                            "ioValue": "source/508699/835262/520744Difference"
+                        },
+                        {
+                            "name": "3D shape 7",
+                            "ioValue": "source/508699/835262/787333Tag"
+                        }
+                    ]
+                },
+                {
                     "atomType": "Code",
                     "name": "Code",
                     "x": 0.3855820105820106,
@@ -286,7 +337,7 @@
                     "ioValues": [
                         {
                             "name": "geometry",
-                            "ioValue": "source/508699/835262/236669Code"
+                            "ioValue": "source/508699/835262/367687Assembly"
                         },
                         {
                             "name": "height",
@@ -325,23 +376,6 @@
                     ]
                 },
                 {
-                    "atomType": "Assembly",
-                    "name": "Assembly",
-                    "x": 0.6646825396825397,
-                    "y": 0.8799999999999999,
-                    "uniqueID": 367687,
-                    "ioValues": [
-                        {
-                            "name": "3D shape 4",
-                            "ioValue": "source/508699/835262/520744Difference"
-                        },
-                        {
-                            "name": "3D shape 5",
-                            "ioValue": "source/508699/835262/236669Code"
-                        }
-                    ]
-                },
-                {
                     "atomType": "Output",
                     "name": "Output",
                     "x": 0.9853587115666179,
@@ -350,7 +384,7 @@
                     "ioValues": [
                         {
                             "name": "number or geometry",
-                            "ioValue": "source/508699/835262/659212Extrude"
+                            "ioValue": "source/508699/835262/120691Tag"
                         }
                     ]
                 },
@@ -458,6 +492,13 @@
                     "ap2ID": 367138
                 },
                 {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
+                    "ap1ID": 166239,
+                    "ap2ID": 787333
+                },
+                {
                     "ap1Name": "result",
                     "ap2Name": "xDist",
                     "ap2Primary": false,
@@ -470,6 +511,13 @@
                     "ap2Primary": false,
                     "ap1ID": 942803,
                     "ap2ID": 166239
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "3D shape 7",
+                    "ap2Primary": false,
+                    "ap1ID": 787333,
+                    "ap2ID": 367687
                 },
                 {
                     "ap1Name": "number",
@@ -494,24 +542,24 @@
                 },
                 {
                     "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 120691,
+                    "ap2ID": 498296
+                },
+                {
+                    "ap1Name": "geometry",
                     "ap2Name": "geometry",
                     "ap2Primary": true,
-                    "ap1ID": 236669,
+                    "ap1ID": 367687,
                     "ap2ID": 659212
                 },
                 {
                     "ap1Name": "geometry",
-                    "ap2Name": "3D shape 5",
-                    "ap2Primary": false,
-                    "ap1ID": 236669,
-                    "ap2ID": 367687
-                },
-                {
-                    "ap1Name": "geometry",
-                    "ap2Name": "number or geometry",
-                    "ap2Primary": false,
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
                     "ap1ID": 659212,
-                    "ap2ID": 498296
+                    "ap2ID": 120691
                 },
                 {
                     "ap1Name": "geometry",
@@ -558,6 +606,23 @@
             ]
         },
         {
+            "atomType": "ExtractTag",
+            "name": "Extract Tag",
+            "x": 0.7288359788359788,
+            "y": 0.25846153846153846,
+            "uniqueID": 785069,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "source/508699/797463Assembly"
+                },
+                {
+                    "name": "tag",
+                    "ioValue": "Plastic"
+                }
+            ]
+        },
+        {
             "atomType": "Assembly",
             "name": "Assembly",
             "x": 0.6302910052910052,
@@ -569,8 +634,8 @@
                     "ioValue": "source/508699/835262Molecule"
                 },
                 {
-                    "name": "3D shape 2",
-                    "ioValue": "source/508699/798660Molecule"
+                    "name": "3D shape 3",
+                    "ioValue": "source/508699/382214Move"
                 }
             ]
         },
@@ -611,8 +676,8 @@
         {
             "atomType": "Molecule",
             "name": "Center for shaft and shorten",
-            "x": 0.5257936507936508,
-            "y": 0.8276923076923077,
+            "x": 0.4226190476190476,
+            "y": 0.8061538461538461,
             "uniqueID": 798660,
             "ioValues": [],
             "topLevel": false,
@@ -886,19 +951,44 @@
             "unitsIndex": 0
         },
         {
-            "atomType": "Difference",
-            "name": "Difference",
-            "x": 0.8074891774891775,
-            "y": 0.6239792387543253,
-            "uniqueID": 219499,
+            "atomType": "ExtractTag",
+            "name": "Extract Tag",
+            "x": 0.7162698412698413,
+            "y": 0.6092307692307692,
+            "uniqueID": 779471,
             "ioValues": [
                 {
-                    "name": "geometry2",
-                    "ioValue": "source/893855/164932Molecule"
+                    "name": "geometry",
+                    "ioValue": "source/508699/797463Assembly"
                 },
                 {
-                    "name": "geometry1",
-                    "ioValue": "source/893855/794739ExtractTag"
+                    "name": "tag",
+                    "ioValue": "Sun"
+                }
+            ]
+        },
+        {
+            "atomType": "Move",
+            "name": "Move",
+            "x": 0.5515873015873016,
+            "y": 0.7630769230769231,
+            "uniqueID": 382214,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "source/508699/798660Molecule"
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 20
                 }
             ]
         },
@@ -911,20 +1001,20 @@
             "ioValues": [
                 {
                     "name": "number or geometry",
-                    "ioValue": "source/508699/797463Assembly"
+                    "ioValue": "source/508699/785069ExtractTag"
                 }
             ]
         },
         {
             "atomType": "Stl",
             "name": "Stl",
-            "x": 0.9063227513227514,
-            "y": 0.8065384615384614,
+            "x": 0.8181216931216931,
+            "y": 0.7599999999999999,
             "uniqueID": 414187,
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": "source/893855/479306Difference"
+                    "ioValue": "source/508699/779471ExtractTag"
                 }
             ]
         }
@@ -941,14 +1031,42 @@
             "ap1Name": "geometry",
             "ap2Name": "number or geometry",
             "ap2Primary": false,
-            "ap1ID": 797463,
+            "ap1ID": 785069,
             "ap2ID": 849794
         },
         {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 797463,
+            "ap2ID": 785069
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 797463,
+            "ap2ID": 779471
+        },
+        {
             "ap1Name": "Geometry",
-            "ap2Name": "3D shape 2",
-            "ap2Primary": false,
+            "ap2Name": "geometry",
+            "ap2Primary": true,
             "ap1ID": 798660,
+            "ap2ID": 382214
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": false,
+            "ap1ID": 779471,
+            "ap2ID": 414187
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 3",
+            "ap2Primary": false,
+            "ap1ID": 382214,
             "ap2ID": 797463
         }
     ],
