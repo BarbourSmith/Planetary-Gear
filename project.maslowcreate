@@ -10,8 +10,8 @@
         {
             "atomType": "Molecule",
             "name": "Drive Gear",
-            "x": 0.4411375661375661,
-            "y": 0.3138461538461539,
+            "x": 0.4365079365079365,
+            "y": 0.31076923076923074,
             "uniqueID": 835262,
             "ioValues": [
                 {
@@ -40,8 +40,8 @@
                 {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.22883597883597884,
-                    "y": 0.1846153846153846,
+                    "x": 0.22552910052910055,
+                    "y": 0.14153846153846153,
                     "uniqueID": 367728,
                     "projectID": "307507544",
                     "ioValues": [
@@ -93,8 +93,8 @@
                 {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.3322884012539185,
-                    "y": 0.28923076923076924,
+                    "x": 0.3082010582010582,
+                    "y": 0.31076923076923074,
                     "uniqueID": 438269,
                     "projectID": "307507544",
                     "ioValues": [
@@ -250,6 +250,28 @@
                     ]
                 },
                 {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 0.45568783068783075,
+                    "y": 0.676923076923077,
+                    "uniqueID": 236669,
+                    "ioValues": [
+                        {
+                            "name": "Gear",
+                            "ioValue": "source/508699/835262/438269GitHubMolecule"
+                        },
+                        {
+                            "name": "Dist",
+                            "ioValue": 7
+                        },
+                        {
+                            "name": "Outside",
+                            "ioValue": "source/508699/835262/762605GitHubMolecule"
+                        }
+                    ],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Gear, Dist, Outside];\n\nconst planetaryFootprint = Gear.offset(0.1);\n\nconst ring = Arc(30)\n  .hasAngle(-1 / 63, 1 / 63)\n  .hull(self(), Point())\n  .cut(Arc(18))\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / -8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 32, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 32 }));\n  \nconst solar = Arc(20)\n  .hasAngle(-1 / 30, 1 / 30)\n  .hull(self(), Point())\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / 8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 16, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 16 }))\n  .fuse()\n  .clean();\n\nreturn Assembly(ring, Gear.y(Dist));"
+                },
+                {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
                     "x": 0.17923280423280424,
@@ -309,24 +331,6 @@
                             "ioValue": "source/508699/835262/787333Tag"
                         }
                     ]
-                },
-                {
-                    "atomType": "Code",
-                    "name": "Code",
-                    "x": 0.3855820105820106,
-                    "y": 0.7815384615384615,
-                    "uniqueID": 236669,
-                    "ioValues": [
-                        {
-                            "name": "Dist",
-                            "ioValue": 7
-                        },
-                        {
-                            "name": "Outside",
-                            "ioValue": "source/508699/835262/762605GitHubMolecule"
-                        }
-                    ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Gear, Dist, Outside];\n\nconst planetaryFootprint = Gear.offset(0.1);\n\nconst ring = Arc(30)\n  .hasAngle(-1 / 63, 1 / 63)\n  .hull(self(), Point())\n  .cut(Arc(18))\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / -8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 32, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 32 }));\n  \nconst solar = Arc(20)\n  .hasAngle(-1 / 30, 1 / 30)\n  .hull(self(), Point())\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / 8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 16, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 16 }))\n  .fuse()\n  .clean();\n\nreturn Assembly(ring, Gear.y(Dist));"
                 },
                 {
                     "atomType": "Extrude",
@@ -455,6 +459,13 @@
                     "ap2Primary": true,
                     "ap1ID": 438269,
                     "ap2ID": 942803
+                },
+                {
+                    "ap1Name": "Geometry",
+                    "ap2Name": "Gear",
+                    "ap2Primary": false,
+                    "ap1ID": 438269,
+                    "ap2ID": 236669
                 },
                 {
                     "ap1Name": "result",
