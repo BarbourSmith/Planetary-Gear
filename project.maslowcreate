@@ -722,6 +722,33 @@
                     ]
                 },
                 {
+                    "atomType": "GitHubMolecule",
+                    "name": "Involute Gear",
+                    "x": 0.1097883597883598,
+                    "y": 0.7415384615384615,
+                    "uniqueID": 367728,
+                    "projectID": "307507544",
+                    "ioValues": [
+                        {
+                            "name": "Number Of Teeth",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Circular Pitch",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Pressure Angle",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Clearance",
+                            "ioValue": 10
+                        }
+                    ],
+                    "simplify": false
+                },
+                {
                     "atomType": "Rotate",
                     "name": "Rotate",
                     "x": 0.670995670995671,
@@ -747,33 +774,6 @@
                     ]
                 },
                 {
-                    "atomType": "GitHubMolecule",
-                    "name": "Involute Gear",
-                    "x": 0.10834553440702782,
-                    "y": 0.7509578544061302,
-                    "uniqueID": 367728,
-                    "projectID": "307507544",
-                    "ioValues": [
-                        {
-                            "name": "Number Of Teeth",
-                            "ioValue": 10
-                        },
-                        {
-                            "name": "Circular Pitch",
-                            "ioValue": 10
-                        },
-                        {
-                            "name": "Pressure Angle",
-                            "ioValue": 10
-                        },
-                        {
-                            "name": "Clearance",
-                            "ioValue": 10
-                        }
-                    ],
-                    "simplify": false
-                },
-                {
                     "atomType": "Difference",
                     "name": "Difference",
                     "x": 0.48280423280423285,
@@ -789,6 +789,20 @@
                             "ioValue": ""
                         }
                     ]
+                },
+                {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 0.24603174603174605,
+                    "y": 0.8215384615384614,
+                    "uniqueID": 236669,
+                    "ioValues": [
+                        {
+                            "name": "Input1",
+                            "ioValue": "source/508699/835262/367728GitHubMolecule"
+                        }
+                    ],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\nconst planetaryFootprint = Input1.offset(0.2);\n\nreturn Orb(10)"
                 },
                 {
                     "atomType": "Color",
@@ -1100,7 +1114,15 @@
                     ]
                 }
             ],
-            "allConnectors": [],
+            "allConnectors": [
+                {
+                    "ap1Name": "Geometry",
+                    "ap2Name": "Input1",
+                    "ap2Primary": false,
+                    "ap1ID": 367728,
+                    "ap2ID": 236669
+                }
+            ],
             "fileTypeVersion": 1,
             "simplify": false,
             "unitsIndex": 0
