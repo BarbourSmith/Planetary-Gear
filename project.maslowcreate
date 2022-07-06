@@ -537,10 +537,37 @@
             "topLevel": false,
             "allAtoms": [
                 {
+                    "atomType": "GitHubMolecule",
+                    "name": "Involute Gear",
+                    "x": 0.15277777777777776,
+                    "y": 0.3323076923076923,
+                    "uniqueID": 367728,
+                    "projectID": "307507544",
+                    "ioValues": [
+                        {
+                            "name": "Number Of Teeth",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Circular Pitch",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Pressure Angle",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "Clearance",
+                            "ioValue": 10
+                        }
+                    ],
+                    "simplify": false
+                },
+                {
                     "atomType": "Molecule",
                     "name": "Retainer for bearings",
-                    "x": 0.31283068783068785,
-                    "y": 0.16,
+                    "x": 0.33664021164021163,
+                    "y": 0.23384615384615384,
                     "uniqueID": 363551,
                     "ioValues": [],
                     "topLevel": false,
@@ -642,91 +669,11 @@
                     "unitsIndex": 0
                 },
                 {
-                    "atomType": "Circle",
-                    "name": "Circle",
-                    "x": 0.09077598828696926,
-                    "y": 0.367816091954023,
-                    "uniqueID": 648955,
-                    "ioValues": [
-                        {
-                            "name": "diameter",
-                            "ioValue": 7.85
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Extrude",
-                    "name": "Extrude",
-                    "x": 0.2013177159590044,
-                    "y": 0.32567049808429116,
-                    "uniqueID": 482402,
-                    "ioValues": [
-                        {
-                            "name": "geometry",
-                            "ioValue": "source/893855/729408/648955Circle"
-                        },
-                        {
-                            "name": "height",
-                            "ioValue": 23.5
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Assembly",
-                    "name": "Assembly",
-                    "x": 0.42724867724867727,
-                    "y": 0.2953846153846154,
-                    "uniqueID": 433473,
-                    "ioValues": []
-                },
-                {
-                    "atomType": "Extrude",
-                    "name": "Extrude",
-                    "x": 0.21669106881405564,
-                    "y": 0.5725190839694657,
-                    "uniqueID": 665432,
-                    "ioValues": [
-                        {
-                            "name": "geometry",
-                            "ioValue": "source/893855/729408/367728GitHubMolecule"
-                        },
-                        {
-                            "name": "height",
-                            "ioValue": 7
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Translate",
-                    "name": "Translate",
-                    "x": 0.32723279648609077,
-                    "y": 0.6221374045801527,
-                    "uniqueID": 807502,
-                    "ioValues": [
-                        {
-                            "name": "geometry",
-                            "ioValue": "source/893855/729408/665432Extrude"
-                        },
-                        {
-                            "name": "xDist",
-                            "ioValue": 0
-                        },
-                        {
-                            "name": "yDist",
-                            "ioValue": 0
-                        },
-                        {
-                            "name": "zDist",
-                            "ioValue": 4.5
-                        }
-                    ]
-                },
-                {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.1097883597883598,
-                    "y": 0.7415384615384615,
-                    "uniqueID": 367728,
+                    "x": 0.1746031746031746,
+                    "y": 0.5876923076923077,
+                    "uniqueID": 306903,
                     "projectID": "307507544",
                     "ioValues": [
                         {
@@ -749,80 +696,10 @@
                     "simplify": false
                 },
                 {
-                    "atomType": "Rotate",
-                    "name": "Rotate",
-                    "x": 0.670995670995671,
-                    "y": 0.34935897435897434,
-                    "uniqueID": 483888,
-                    "ioValues": [
-                        {
-                            "name": "geometry",
-                            "ioValue": "source/893855/729408/433473Assembly"
-                        },
-                        {
-                            "name": "x-axis degrees",
-                            "ioValue": 0
-                        },
-                        {
-                            "name": "y-axis degrees",
-                            "ioValue": 180
-                        },
-                        {
-                            "name": "z-axis degrees",
-                            "ioValue": 0
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Difference",
-                    "name": "Difference",
-                    "x": 0.48280423280423285,
-                    "y": 0.6282051282051282,
-                    "uniqueID": 942547,
-                    "ioValues": [
-                        {
-                            "name": "geometry2",
-                            "ioValue": "source/893855/729408/311848Molecule"
-                        },
-                        {
-                            "name": "geometry1",
-                            "ioValue": ""
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Code",
-                    "name": "Code",
-                    "x": 0.24603174603174605,
-                    "y": 0.8215384615384614,
-                    "uniqueID": 236669,
-                    "ioValues": [
-                        {
-                            "name": "Input1",
-                            "ioValue": "source/508699/835262/367728GitHubMolecule"
-                        }
-                    ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\nconst planetaryFootprint = Input1.offset(0.2);\n\nreturn Orb(10)"
-                },
-                {
-                    "atomType": "Color",
-                    "name": "Color",
-                    "x": 0.7575757575757576,
-                    "y": 0.40705128205128205,
-                    "uniqueID": 805804,
-                    "ioValues": [
-                        {
-                            "name": "geometry",
-                            "ioValue": "source/893855/729408/483888Rotate"
-                        }
-                    ],
-                    "selectedColorIndex": "3"
-                },
-                {
                     "atomType": "Molecule",
                     "name": "Center for shaft and shorten",
-                    "x": 0.33730158730158727,
-                    "y": 0.8173076923076923,
+                    "x": 0.5600835945663531,
+                    "y": 0.4184615384615385,
                     "uniqueID": 311848,
                     "ioValues": [],
                     "topLevel": false,
@@ -1064,6 +941,59 @@
                     "unitsIndex": 0
                 },
                 {
+                    "atomType": "Rotate",
+                    "name": "Rotate",
+                    "x": 0.670995670995671,
+                    "y": 0.34935897435897434,
+                    "uniqueID": 483888,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/893855/729408/433473Assembly"
+                        },
+                        {
+                            "name": "x-axis degrees",
+                            "ioValue": 0
+                        },
+                        {
+                            "name": "y-axis degrees",
+                            "ioValue": 180
+                        },
+                        {
+                            "name": "z-axis degrees",
+                            "ioValue": 0
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 0.34457671957671954,
+                    "y": 0.7753846153846153,
+                    "uniqueID": 236669,
+                    "ioValues": [
+                        {
+                            "name": "Input1",
+                            "ioValue": "source/508699/835262/367728GitHubMolecule"
+                        }
+                    ],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\nconst planetaryFootprint = Input1.offset(0.2);\n\nreturn planetaryFootprint;"
+                },
+                {
+                    "atomType": "Color",
+                    "name": "Color",
+                    "x": 0.7575757575757576,
+                    "y": 0.40705128205128205,
+                    "uniqueID": 805804,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/893855/729408/483888Rotate"
+                        }
+                    ],
+                    "selectedColorIndex": "3"
+                },
+                {
                     "atomType": "Translate",
                     "name": "Translate",
                     "x": 0.8181818181818181,
@@ -1089,12 +1019,30 @@
                     ]
                 },
                 {
+                    "atomType": "Circle",
+                    "name": "Circle",
+                    "x": 0.7235449735449735,
+                    "y": 0.7507692307692307,
+                    "uniqueID": 474403,
+                    "ioValues": [
+                        {
+                            "name": "diameter",
+                            "ioValue": 10
+                        }
+                    ]
+                },
+                {
                     "atomType": "Output",
                     "name": "Output",
                     "x": 0.9853587115666179,
                     "y": 0.5,
                     "uniqueID": 498296,
-                    "ioValues": []
+                    "ioValues": [
+                        {
+                            "name": "number or geometry",
+                            "ioValue": "source/508699/835262/474403Circle"
+                        }
+                    ]
                 },
                 {
                     "atomType": "Tag",
@@ -1121,6 +1069,13 @@
                     "ap2Primary": false,
                     "ap1ID": 367728,
                     "ap2ID": 236669
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 474403,
+                    "ap2ID": 498296
                 }
             ],
             "fileTypeVersion": 1,
