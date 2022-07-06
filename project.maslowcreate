@@ -19,18 +19,18 @@
                 {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.15277777777777776,
-                    "y": 0.3507692307692307,
+                    "x": 0.19973544973544974,
+                    "y": 0.27384615384615385,
                     "uniqueID": 367728,
                     "projectID": "307507544",
                     "ioValues": [
                         {
                             "name": "Number Of Teeth",
-                            "ioValue": 10
+                            "ioValue": 12
                         },
                         {
                             "name": "Circular Pitch",
-                            "ioValue": 3.5
+                            "ioValue": 1.6
                         },
                         {
                             "name": "Pressure Angle",
@@ -44,9 +44,107 @@
                     "simplify": false
                 },
                 {
+                    "atomType": "Constant",
+                    "name": "Dist",
+                    "x": 0.2857142857142857,
+                    "y": 0.2923076923076923,
+                    "uniqueID": 266551,
+                    "ioValues": [
+                        {
+                            "name": "number",
+                            "ioValue": 7
+                        }
+                    ],
+                    "evolve": false,
+                    "min": 0,
+                    "max": 20
+                },
+                {
+                    "atomType": "Circle",
+                    "name": "Circle",
+                    "x": 0.09788359788359789,
+                    "y": 0.43692307692307697,
+                    "uniqueID": 926203,
+                    "ioValues": [
+                        {
+                            "name": "diameter",
+                            "ioValue": 18
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Extrude",
+                    "name": "Extrude",
+                    "x": 0.4477513227513228,
+                    "y": 0.3292307692307692,
+                    "uniqueID": 821124,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/508699/835262/367728GitHubMolecule"
+                        },
+                        {
+                            "name": "height",
+                            "ioValue": 4
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Stl",
+                    "name": "Stl",
+                    "x": 0.5343915343915343,
+                    "y": 0.24923076923076923,
+                    "uniqueID": 709544,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/508699/835262/821124Extrude"
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 0.335978835978836,
+                    "y": 0.6,
+                    "uniqueID": 236669,
+                    "ioValues": [
+                        {
+                            "name": "Gear",
+                            "ioValue": "source/508699/835262/367728GitHubMolecule"
+                        },
+                        {
+                            "name": "Dist",
+                            "ioValue": 7
+                        },
+                        {
+                            "name": "Outside",
+                            "ioValue": "source/508699/835262/762605GitHubMolecule"
+                        }
+                    ],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Gear, Dist, Outside];\n\nconst planetaryFootprint = Gear.offset(0.1);\n\nconst ring = Arc(30)\n  .hasAngle(-1 / 63, 1 / 63)\n  .hull(self(), Point())\n  .cut(Arc(18))\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / -8)\n          .y(Dist)\n          .rz(a / 32),\n      { from: -1, by: 1 / 16, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 32 }));\n  \nconst solar = Arc(20)\n  .hasAngle(-1 / 30, 1 / 30)\n  .hull(self(), Point())\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / 8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 16, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 16 }))\n  .fuse()\n  .clean();\n\nreturn Assembly(ring, Gear.y(Dist));"
+                },
+                {
+                    "atomType": "Extrude",
+                    "name": "Extrude",
+                    "x": 0.6164021164021164,
+                    "y": 0.42153846153846153,
+                    "uniqueID": 659212,
+                    "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": "source/508699/835262/236669Code"
+                        },
+                        {
+                            "name": "height",
+                            "ioValue": 6
+                        }
+                    ]
+                },
+                {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.10846560846560847,
+                    "x": 0.10582010582010583,
                     "y": 0.7507692307692307,
                     "uniqueID": 762605,
                     "projectID": "307507544",
@@ -71,18 +169,38 @@
                     "simplify": false
                 },
                 {
-                    "atomType": "Code",
-                    "name": "Code",
-                    "x": 0.34523809523809523,
-                    "y": 0.7846153846153847,
-                    "uniqueID": 236669,
+                    "atomType": "Assembly",
+                    "name": "Assembly",
+                    "x": 0.5720899470899471,
+                    "y": 0.6584615384615384,
+                    "uniqueID": 367687,
                     "ioValues": [
                         {
-                            "name": "Input1",
-                            "ioValue": "source/508699/835262/367728GitHubMolecule"
+                            "name": "3D shape 4",
+                            "ioValue": "source/508699/835262/520744Difference"
+                        },
+                        {
+                            "name": "3D shape 5",
+                            "ioValue": "source/508699/835262/236669Code"
                         }
-                    ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\nconst planetaryFootprint = Input1.offset(0.2);\n\nconst ring = Arc(50)\n  .hasAngle(-1 / 64, 1 / 64)\n  .hull(self(), Point())\n  .cut(Arc(30))\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / -8)\n          .y(12)\n          .rz(a / 32),\n      { from: -1, by: 1 / 16, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 32 }));\n\nreturn ring;"
+                    ]
+                },
+                {
+                    "atomType": "Difference",
+                    "name": "Difference",
+                    "x": 0.41203703703703703,
+                    "y": 0.8307692307692307,
+                    "uniqueID": 520744,
+                    "ioValues": [
+                        {
+                            "name": "geometry2",
+                            "ioValue": "source/508699/835262/926203Circle"
+                        },
+                        {
+                            "name": "geometry1",
+                            "ioValue": "source/508699/835262/762605GitHubMolecule"
+                        }
+                    ]
                 },
                 {
                     "atomType": "Output",
@@ -93,7 +211,7 @@
                     "ioValues": [
                         {
                             "name": "number or geometry",
-                            "ioValue": "source/508699/835262/367728GitHubMolecule"
+                            "ioValue": "source/508699/835262/659212Extrude"
                         }
                     ]
                 },
@@ -118,17 +236,80 @@
             "allConnectors": [
                 {
                     "ap1Name": "Geometry",
-                    "ap2Name": "Input1",
+                    "ap2Name": "Gear",
                     "ap2Primary": false,
                     "ap1ID": 367728,
                     "ap2ID": 236669
                 },
                 {
                     "ap1Name": "Geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
+                    "ap1ID": 367728,
+                    "ap2ID": 821124
+                },
+                {
+                    "ap1Name": "number",
+                    "ap2Name": "Dist",
+                    "ap2Primary": false,
+                    "ap1ID": 266551,
+                    "ap2ID": 236669
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry2",
+                    "ap2Primary": false,
+                    "ap1ID": 926203,
+                    "ap2ID": 520744
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 821124,
+                    "ap2ID": 709544
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
+                    "ap1ID": 236669,
+                    "ap2ID": 659212
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "3D shape 5",
+                    "ap2Primary": false,
+                    "ap1ID": 236669,
+                    "ap2ID": 367687
+                },
+                {
+                    "ap1Name": "geometry",
                     "ap2Name": "number or geometry",
                     "ap2Primary": false,
-                    "ap1ID": 367728,
+                    "ap1ID": 659212,
                     "ap2ID": 498296
+                },
+                {
+                    "ap1Name": "Geometry",
+                    "ap2Name": "Outside",
+                    "ap2Primary": false,
+                    "ap1ID": 762605,
+                    "ap2ID": 236669
+                },
+                {
+                    "ap1Name": "Geometry",
+                    "ap2Name": "geometry1",
+                    "ap2Primary": false,
+                    "ap1ID": 762605,
+                    "ap2ID": 520744
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "3D shape 4",
+                    "ap2Primary": false,
+                    "ap1ID": 520744,
+                    "ap2ID": 367687
                 }
             ],
             "fileTypeVersion": 1,
