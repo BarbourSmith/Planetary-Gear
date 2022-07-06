@@ -24,7 +24,7 @@
                 },
                 {
                     "name": "Teeth pitch",
-                    "ioValue": 1.6
+                    "ioValue": 2
                 }
             ],
             "topLevel": false,
@@ -40,8 +40,8 @@
                 {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.2294973544973545,
-                    "y": 0.2,
+                    "x": 0.22883597883597884,
+                    "y": 0.1846153846153846,
                     "uniqueID": 367728,
                     "projectID": "307507544",
                     "ioValues": [
@@ -51,7 +51,7 @@
                         },
                         {
                             "name": "Circular Pitch",
-                            "ioValue": 1.6
+                            "ioValue": 2
                         },
                         {
                             "name": "Pressure Angle",
@@ -75,8 +75,8 @@
                 {
                     "atomType": "GitHubMolecule",
                     "name": "Involute Gear",
-                    "x": 0.2757936507936508,
-                    "y": 0.28307692307692306,
+                    "x": 0.2810846560846561,
+                    "y": 0.2646153846153846,
                     "uniqueID": 438269,
                     "projectID": "307507544",
                     "ioValues": [
@@ -86,7 +86,7 @@
                         },
                         {
                             "name": "Circular Pitch",
-                            "ioValue": 1.6
+                            "ioValue": 2
                         },
                         {
                             "name": "Pressure Angle",
@@ -108,7 +108,7 @@
                     "ioValues": [
                         {
                             "name": "x",
-                            "ioValue": 1.6
+                            "ioValue": 2
                         },
                         {
                             "name": "y",
@@ -128,8 +128,8 @@
                 {
                     "atomType": "Assembly",
                     "name": "Assembly",
-                    "x": 0.5337301587301587,
-                    "y": 0.21846153846153848,
+                    "x": 0.5304232804232805,
+                    "y": 0.17538461538461536,
                     "uniqueID": 166239,
                     "ioValues": [
                         {
@@ -144,21 +144,21 @@
                 },
                 {
                     "atomType": "Equation",
-                    "name": "x + y",
+                    "name": "(x/2*3.1415) + y/(2*3.1415)",
                     "x": 0.2943121693121693,
                     "y": 0.49846153846153846,
                     "uniqueID": 700113,
                     "ioValues": [
                         {
                             "name": "x",
-                            "ioValue": 19.200000000000003
+                            "ioValue": 24
                         },
                         {
                             "name": "y",
-                            "ioValue": 16
+                            "ioValue": 20
                         }
                     ],
-                    "currentEquation": "x + y"
+                    "currentEquation": "(x/2*3.1415) + y/(2*3.1415)"
                 },
                 {
                     "atomType": "Equation",
@@ -169,7 +169,7 @@
                     "ioValues": [
                         {
                             "name": "x",
-                            "ioValue": 1.6
+                            "ioValue": 2
                         },
                         {
                             "name": "y",
@@ -181,8 +181,8 @@
                 {
                     "atomType": "Move",
                     "name": "Move",
-                    "x": 0.41534391534391535,
-                    "y": 0.4461538461538462,
+                    "x": 0.419973544973545,
+                    "y": 0.43076923076923074,
                     "uniqueID": 942803,
                     "ioValues": [
                         {
@@ -191,7 +191,7 @@
                         },
                         {
                             "name": "xDist",
-                            "ioValue": 35.2
+                            "ioValue": 7
                         },
                         {
                             "name": "yDist",
@@ -218,6 +218,19 @@
                     "evolve": false,
                     "min": 0,
                     "max": 20
+                },
+                {
+                    "atomType": "Circle",
+                    "name": "Circle",
+                    "x": 0.5224867724867724,
+                    "y": 0.5446153846153846,
+                    "uniqueID": 220000,
+                    "ioValues": [
+                        {
+                            "name": "diameter",
+                            "ioValue": 20
+                        }
+                    ]
                 },
                 {
                     "atomType": "GitHubMolecule",
@@ -436,13 +449,6 @@
                     "ap2Primary": false,
                     "ap1ID": 845965,
                     "ap2ID": 997378
-                },
-                {
-                    "ap1Name": "result",
-                    "ap2Name": "xDist",
-                    "ap2Primary": false,
-                    "ap1ID": 700113,
-                    "ap2ID": 942803
                 },
                 {
                     "ap1Name": "result",
