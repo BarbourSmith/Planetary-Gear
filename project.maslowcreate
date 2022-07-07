@@ -272,33 +272,6 @@
                     "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Gear, Dist, Outside];\n\nconst planetaryFootprint = Gear.offset(0.1);\n\nconst ring = Arc(30)\n  .hasAngle(-1 / 63, 1 / 63)\n  .hull(self(), Point())\n  .cut(Arc(18))\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / -8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 32, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 32 }));\n  \nconst solar = Arc(20)\n  .hasAngle(-1 / 30, 1 / 30)\n  .hull(self(), Point())\n  .cut(\n    seq(\n      (a) =>\n        planetaryFootprint\n          .rz(a / 8)\n          .y(Dist)\n          .rz(a / 16),\n      { from: -1, by: 1 / 16, to: 1 }\n    )\n  )\n  .clean()\n  .rz(seq({ by: 1 / 16 }))\n  .fuse()\n  .clean();\n\nreturn Assembly(ring, Gear.y(Dist));"
                 },
                 {
-                    "atomType": "GitHubMolecule",
-                    "name": "Involute Gear",
-                    "x": 0.17923280423280424,
-                    "y": 0.8246153846153846,
-                    "uniqueID": 762605,
-                    "projectID": "307507544",
-                    "ioValues": [
-                        {
-                            "name": "Number Of Teeth",
-                            "ioValue": 17
-                        },
-                        {
-                            "name": "Circular Pitch",
-                            "ioValue": 5
-                        },
-                        {
-                            "name": "Pressure Angle",
-                            "ioValue": 20
-                        },
-                        {
-                            "name": "Clearance",
-                            "ioValue": 0
-                        }
-                    ],
-                    "simplify": false
-                },
-                {
                     "atomType": "Tag",
                     "name": "Add Tag",
                     "x": 0.7738095238095237,
@@ -331,6 +304,33 @@
                             "ioValue": "source/508699/835262/787333Tag"
                         }
                     ]
+                },
+                {
+                    "atomType": "GitHubMolecule",
+                    "name": "Involute Gear",
+                    "x": 0.21693121693121695,
+                    "y": 0.836923076923077,
+                    "uniqueID": 762605,
+                    "projectID": "307507544",
+                    "ioValues": [
+                        {
+                            "name": "Number Of Teeth",
+                            "ioValue": 17
+                        },
+                        {
+                            "name": "Circular Pitch",
+                            "ioValue": 5
+                        },
+                        {
+                            "name": "Pressure Angle",
+                            "ioValue": 20
+                        },
+                        {
+                            "name": "Clearance",
+                            "ioValue": 0
+                        }
+                    ],
+                    "simplify": false
                 },
                 {
                     "atomType": "Extrude",
@@ -538,20 +538,6 @@
                     "ap2ID": 236669
                 },
                 {
-                    "ap1Name": "Geometry",
-                    "ap2Name": "Outside",
-                    "ap2Primary": false,
-                    "ap1ID": 762605,
-                    "ap2ID": 236669
-                },
-                {
-                    "ap1Name": "Geometry",
-                    "ap2Name": "geometry1",
-                    "ap2Primary": false,
-                    "ap1ID": 762605,
-                    "ap2ID": 520744
-                },
-                {
                     "ap1Name": "geometry",
                     "ap2Name": "number or geometry",
                     "ap2Primary": false,
@@ -564,6 +550,20 @@
                     "ap2Primary": true,
                     "ap1ID": 367687,
                     "ap2ID": 659212
+                },
+                {
+                    "ap1Name": "Geometry",
+                    "ap2Name": "Outside",
+                    "ap2Primary": false,
+                    "ap1ID": 762605,
+                    "ap2ID": 236669
+                },
+                {
+                    "ap1Name": "Geometry",
+                    "ap2Name": "geometry1",
+                    "ap2Primary": false,
+                    "ap1ID": 762605,
+                    "ap2ID": 520744
                 },
                 {
                     "ap1Name": "geometry",
@@ -962,27 +962,10 @@
             "unitsIndex": 0
         },
         {
-            "atomType": "ExtractTag",
-            "name": "Extract Tag",
-            "x": 0.7162698412698413,
-            "y": 0.6092307692307692,
-            "uniqueID": 779471,
-            "ioValues": [
-                {
-                    "name": "geometry",
-                    "ioValue": "source/508699/797463Assembly"
-                },
-                {
-                    "name": "tag",
-                    "ioValue": "Sun"
-                }
-            ]
-        },
-        {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.5515873015873016,
-            "y": 0.7630769230769231,
+            "x": 0.544973544973545,
+            "y": 0.7323076923076923,
             "uniqueID": 382214,
             "ioValues": [
                 {
@@ -1000,6 +983,23 @@
                 {
                     "name": "zDist",
                     "ioValue": 20
+                }
+            ]
+        },
+        {
+            "atomType": "ExtractTag",
+            "name": "Extract Tag",
+            "x": 0.7162698412698413,
+            "y": 0.6092307692307692,
+            "uniqueID": 779471,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "source/508699/797463Assembly"
+                },
+                {
+                    "name": "tag",
+                    "ioValue": "Sun"
                 }
             ]
         },
@@ -1068,17 +1068,17 @@
         },
         {
             "ap1Name": "geometry",
-            "ap2Name": "geometry",
-            "ap2Primary": false,
-            "ap1ID": 779471,
-            "ap2ID": 414187
-        },
-        {
-            "ap1Name": "geometry",
             "ap2Name": "3D shape 3",
             "ap2Primary": false,
             "ap1ID": 382214,
             "ap2ID": 797463
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": false,
+            "ap1ID": 779471,
+            "ap2ID": 414187
         }
     ],
     "fileTypeVersion": 1,
